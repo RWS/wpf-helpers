@@ -10,8 +10,6 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: DotNetCoreCLI@2
+- task: MSBuild@1
   inputs:
-    command: 'build'
-    projects: '$(Build.Repository.LocalPath)'
-    arguments: '--configuration Debug'
+    solution: '**/*.sln'
