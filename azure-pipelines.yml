@@ -14,4 +14,4 @@ steps:
   inputs:
     command: 'build'
     projects: '$(Build.Repository.LocalPath)'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration Debug'
