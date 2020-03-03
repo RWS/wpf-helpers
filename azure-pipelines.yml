@@ -13,5 +13,5 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '$(Build.SourcesDirectory)'
+    projects: '$(Build.Repository.LocalPath)'
     arguments: '--configuration $(buildConfiguration)'
