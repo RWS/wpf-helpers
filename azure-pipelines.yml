@@ -21,12 +21,11 @@ stages:
     steps:
     - task: NuGetToolInstaller@0
     - task: CmdLine@2
+      displayName: 'Start building the Community WPF Helpers'
       inputs:
         script: |
           .\build.cmd BuildAndCreatePackages RELEASE
       
-          displayName: 'Start building the Community WPF Helpers'
-
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.SourcesDirectory)\packaging'
