@@ -23,7 +23,7 @@ stages:
     - task: CmdLine@2
       displayName: 'Start building the Community WPF Helpers'
       inputs:
-        script: |
+        script:
           .\build.cmd BuildAndCreatePackages RELEASE
       
     - task: PublishBuildArtifacts@1
