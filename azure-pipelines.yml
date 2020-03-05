@@ -24,7 +24,7 @@ stages:
       displayName: 'Start building the Community WPF Helpers'
       inputs:
         script: |
-          .\build.cmd CreatePackages RELEASE
+          '.\Community Wpf Helpers\build.cmd CreatePackages RELEASE'
       
     - task: PublishBuildArtifacts@1
       inputs:
