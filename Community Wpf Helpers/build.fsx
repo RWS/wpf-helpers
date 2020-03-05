@@ -1,4 +1,4 @@
-﻿#r ".\\'Community Wpf Helpers'\\tools\\FAKE.Core\\tools\\FakeLib.dll"
+﻿#r "./tools/FAKE.Core/tools/FakeLib.dll"
 
 open Fake
 open System
