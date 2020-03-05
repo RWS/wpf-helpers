@@ -16,7 +16,7 @@ let packagingRoot = "./packaging"
 let packagingDir = packagingRoot @@ "sdlcommunitywpfhelpers"
 
 let releaseNotes = 
-    ReadFile "CommunityWPFHelpers\ReleaseNotes.md"
+    ReadFile "./CommunityWPFHelpers/ReleaseNotes.md"
     |> ReleaseNotesHelper.parseReleaseNotes
 
 let buildMode = getBuildParamOrDefault "buildMode" "Release"
