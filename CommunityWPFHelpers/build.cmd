@@ -1,6 +1,6 @@
 @echo off
 
-nuget "install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion"
+nuget "install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion" "-removeLegacyFakeWarning"
 nuget restore
 :Build
 
