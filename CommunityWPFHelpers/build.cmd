@@ -1,7 +1,7 @@
 @echo off
 
-nuget "install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion"
-nuget restore
+REM nuget "install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion"
+REM nuget restore
 :Build
 
 
