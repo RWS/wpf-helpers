@@ -54,7 +54,7 @@ let setParams defaults = {
     }
 
 Target "BuildApp" (fun _ ->
-    build setParams "./Sdl.CommunityWpfHelpers.sln"
+    build setParams "./CommunityWPFHelpers/Sdl.CommunityWpfHelpers.sln"
         |> DoNothing
 )
 //Publishing is not working from build script because of an issue in FAKE with 
