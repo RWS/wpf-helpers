@@ -16,7 +16,7 @@ IF NOT [%2]==[] (set BUILDMODE="%2")
 if %TARGET%=="BuildApp" (SET RunBuild=1)
 if %TARGET%=="CreatePackages" (SET RunBuild=1)
 
-"tools\FAKE.Core\tools\Fake.exe" ".\build.fsx" "target=%TARGET%" "buildMode=%BUILDMODE%"
+"tools\FAKE.Core\tools\Fake.exe" ".\..\..\..\build.fsx" "target=%TARGET%" "buildMode=%BUILDMODE%"
 
 :Quit
 exit /b %errorlevel%
