@@ -19,8 +19,12 @@ stages:
       - Agent.ComputerName -equals CLJVMOX2017A2
       - visualstudio
     steps:
-    - task: NuGetToolInstaller@0
+    # - task: NuGetToolInstaller@0
+    #   inputs:
+    #     checkLatest: true
+    - task: NuGetToolInstaller@1
       inputs:
+        versionSpec: 
         checkLatest: true
     - task: CmdLine@2
       inputs:
