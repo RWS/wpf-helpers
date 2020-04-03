@@ -69,6 +69,7 @@
     <Compile Include="Services\MessageBoxService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="SdlCommunity.snk" />
   </ItemGroup>
   <ItemGroup />
