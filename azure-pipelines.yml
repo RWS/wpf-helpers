@@ -20,6 +20,8 @@ stages:
       - visualstudio
     steps:
     - task: NuGetToolInstaller@0
+      inputs:
+        checkLatest: true
     - task: CmdLine@2
       inputs:
         script: |
