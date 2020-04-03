@@ -20,12 +20,16 @@ stages:
       - visualstudio
     steps:
     - task: NuGetToolInstaller@0
-    - task: CmdLine@2
+    - task: MSBuild@1
       inputs:
-        script: |
-          .\build.cmd BuildAndCreatePackages RELEASE
+        solution: '**/*.sln'
+        clean: true
+    # - task: CmdLine@2
+    #   inputs:
+    #     script: |
+    #       .\build.cmd BuildAndCreatePackages RELEASE
       
-          displayName: 'Start building the Community WPF Helpers'
+    #       displayName: 'Start building the Community WPF Helpers'
      #task: NuGetCommand@2
       #inputs:
       #  command: 'custom'
@@ -68,22 +72,22 @@ stages:
               publishVstsFeed: '7b173346-9ceb-4f8d-a243-d8a5e82731d0'
               allowPackageConflicts: true
 
-- stage: Publish_Nuget
-  displayName: 'Publish nuget packages'
-  jobs:
-  - deployment: Publish_Nuget
-    displayName: 'Publish on azure external devops feed'
-    pool:
-      vmImage: 'vs2017-win2016'
-    environment: 'Azure DevOps feed'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - task: NuGetCommand@2
-            inputs:
-              command: 'push'
-              packagesToPush: '$(Agent.BuildDirectory)/**/*.nupkg;!$(Agent.BuildDirectory)/**/*.symbols.nupkg'
-              nuGetFeedType: 'external'
-              publishFeedCredentials: 'Nuget'
-              allowPackageConflicts: true
+# - stage: Publish_Nuget
+#   displayName: 'Publish nuget packages'
+#   jobs:
+#   - deployment: Publish_Nuget
+#     displayName: 'Publish on azure external devops feed'
+#     pool:
+#       vmImage: 'vs2017-win2016'
+#     environment: 'Azure DevOps feed'
+#     strategy:
+#       runOnce:
+#         deploy:
+#           steps:
+#           - task: NuGetCommand@2
+#             inputs:
+#               command: 'push'
+#               packagesToPush: '$(Agent.BuildDirectory)/**/*.nupkg;!$(Agent.BuildDirectory)/**/*.symbols.nupkg'
+#               nuGetFeedType: 'external'
+#               publishFeedCredentials: 'Nuget'
+#               allowPackageConflicts: true
