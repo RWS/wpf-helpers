@@ -20,8 +20,13 @@ stages:
       - visualstudio
     steps:
     - task: NuGetToolInstaller@0
-
-    - #task: NuGetCommand@2
+    - task: CmdLine@2
+      inputs:
+        script: |
+          .\build.cmd BuildAndCreatePackages RELEASE
+      
+          displayName: 'Start building the Community WPF Helpers'
+     #task: NuGetCommand@2
       #inputs:
       #  command: 'custom'
        # arguments: '"install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion"'
@@ -30,11 +35,11 @@ stages:
         #command: 'restore'
        # restoreSolution: '**/*.sln'
         #feedsToUse: 'select'
-    - task: CmdLine@2
-      displayName: 'Start building the Community WPF Helpers'
-      inputs:
-        script: 
-          .\CommunityWPFHelpers\build.cmd CreatePackages RELEASE
+    # - task: CmdLine@2
+    #   displayName: 'Start building the Community WPF Helpers'
+    #   inputs:
+    #     script: 
+    #       .\CommunityWPFHelpers\build.cmd CreatePackages RELEASE
       
     - task: PublishBuildArtifacts@1
       inputs:
