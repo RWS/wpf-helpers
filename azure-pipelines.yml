@@ -27,7 +27,7 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'custom'
-        custom: 'new tool-manifest'
+        custom: 'dotnet new tool-manifest'
     - task: CmdLine@2
       inputs:
         script: |
