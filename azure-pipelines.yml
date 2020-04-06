@@ -20,6 +20,10 @@ stages:
       - visualstudio
     steps:
     - task: NuGetToolInstaller@0
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: latest
     - task: DotNetCoreCLI@2
       inputs:
         command: 'custom'
