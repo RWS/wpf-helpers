@@ -22,10 +22,15 @@ stages:
     # - task: NuGetToolInstaller@0
     #   inputs:
     #     checkLatest: true
-    - task: NuGetToolInstaller@1
+    - task: NuGetToolInstaller@0
       inputs:
         versionSpec: 
         checkLatest: true
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'new tool-manifest'
     - task: CmdLine@2
       inputs:
         script: |
